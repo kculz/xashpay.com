@@ -3,23 +3,22 @@ import { useEffect } from 'react';
 import Header from './components/layouts/Header';
 import Footer from './components/layouts/Footer';
 import Home from './pages/Home';
-import XashPOS from './pages/XashPOS';
-import Developers from './pages/Developers';
 import About from './pages/About';
+import Services from './pages/Services';
+import Earn from './pages/Earn';
+import Coverage from './pages/Coverage';
 import Contact from './pages/Contact';
+
+// Import remaining legal pages just to not break existing references
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsOfService from './pages/TermsOfService';
-import AMLPolicy from './pages/AMLPolicy';
-import DataProtection from './pages/DataProtection';
-import CookiePolicy from './pages/CookiePolicy';
-import Agents from './pages/Agents';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
 
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
-  }, [pathname]); // This triggers every time the path changes
+  }, [pathname]);
 
   return null;
 }
@@ -27,24 +26,28 @@ function ScrollToTop() {
 function App() {
   return (
     <Router>
-      {/* Place it here once - it handles all route changes automatically */}
-      <ScrollToTop /> 
+      <ScrollToTop />
       
-      <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-brand-50/30">
+      <div className="min-h-screen flex flex-col font-sans bg-gray-50">
         <Header />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/pos" element={<XashPOS />} />
-          <Route path="/developers" element={<Developers />} />
-          <Route path="/agents" element={<Agents />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-          <Route path="/terms-of-service" element={<TermsOfService />} />
-          <Route path="/aml-policy" element={<AMLPolicy />} />
-          <Route path="/data-protection" element={<DataProtection />} />
-          <Route path="/cookie-policy" element={<CookiePolicy />} />
-        </Routes>
+        
+        <main className="flex-1">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/services" element={<Services />} />
+            <Route path="/earn" element={<Earn />} />
+            <Route path="/coverage" element={<Coverage />} />
+            <Route path="/contact" element={<Contact />} />
+            
+            {/* Legal Routes */}
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+            <Route path="/terms-of-service" element={<TermsOfService />} />
+            
+            {/* Redirect legacy offline/agents routes to home or keep them unlinked */}
+          </Routes>
+        </main>
+        
         <Footer />
       </div>
     </Router>
