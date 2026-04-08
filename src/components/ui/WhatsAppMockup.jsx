@@ -15,7 +15,7 @@ const WhatsAppMockup = () => {
     {
       id: 2,
       sender: 'bot',
-      text: 'Hello! 👋 Welcome to XASH. I can help you purchase data bundles.\n\nPlease select your network:\n1️⃣ Econet\n2️⃣ NetOne\n3️⃣ Telecel',
+      text: 'Hello! 👋 Welcome to XashPay. I can help you purchase data bundles.\n\nPlease select your network:\n1️⃣ Econet\n2️⃣ NetOne\n3️⃣ Telecel',
       time: '10:30'
     },
     {
@@ -51,7 +51,7 @@ const WhatsAppMockup = () => {
     {
       id: 8,
       sender: 'bot',
-      text: '🎉 Success! Your 2GB bundle has been sent to +263 77 932 5039\n\n💰 Amount: $8.00\n📱 Network: Econet\n📦 Bundle: 2GB Weekly\n\nTransaction ID: XSH123456\n\nThank you for using XASH! 🙏',
+      text: '🎉 Success! Your 2GB bundle has been sent to +263 77 932 5039\n\n💰 Amount: $8.00\n📱 Network: Econet\n📦 Bundle: 2GB Weekly\n\nTransaction ID: XSH123456\n\nThank you for using XashPay! 🙏',
       time: '10:33'
     }
   ];
@@ -100,7 +100,7 @@ const WhatsAppMockup = () => {
                   <div className="absolute -bottom-0.5 -right-0.5 w-3.5 h-3.5 bg-green-400 rounded-full border-2 border-[#075E54]"></div>
                 </div>
                 <div>
-                  <div className="font-semibold">XASH Bot</div>
+                  <div className="font-semibold">XashPay Bot</div>
                   <div className="text-xs text-green-200 flex items-center">
                     <span className="w-2 h-2 bg-green-400 rounded-full mr-1.5 animate-pulse"></span>
                     Online

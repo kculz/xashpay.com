@@ -134,10 +134,10 @@ const Agents = () => {
   return (
     <div className="pt-20 bg-white">
       <Helmet>
-        <title>Become a XASH Agent - Earn Commissions with Zero Investment</title>
+        <title>Become a XashPay Agent - Earn Commissions with Zero Investment</title>
         <meta 
           name="description" 
-          content="Join XASH as an agent and start earning commissions by providing essential services to your community. No startup costs, flexible hours, and 24/7 support." 
+          content="Join XashPay as an agent and start earning commissions by providing essential services to your community. No startup costs, flexible hours, and 24/7 support." 
         />  
       </Helmet>
       {/* Hero Section */}
@@ -150,7 +150,7 @@ const Agents = () => {
               transition={{ duration: 0.8 }}
             >
               <h1 className="text-5xl sm:text-6xl font-bold mb-6 text-white">
-                Become a XASH Agent
+                Become a XashPay Agent
               </h1>
               <p className="text-xl text-purple-100 mb-8 leading-relaxed">
                 Join our network of successful agents and earn commissions by providing essential services to your community. No startup costs, flexible hours, and 24/7 support.
@@ -224,13 +224,13 @@ const Agents = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <span className="inline-block px-4 py-2 bg-blue-50 text-blue-600 rounded-full text-sm font-semibold mb-4">
-              Why Join XASH?
+              Why Join XashPay?
             </span>
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
-              Benefits of Being a XASH Agent
+              Benefits of Being a XashPay Agent
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto text-lg">
-              Join thousands of successful agents building their businesses with XASH
+              Join thousands of successful agents building their businesses with XashPay
             </p>
           </div>
 
@@ -281,7 +281,7 @@ const Agents = () => {
               Simple Process
             </span>
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
-              How to Become a XASH Agent
+              How to Become a XashPay Agent
             </h2>
             <p className="text-gray-600 text-lg">
               Start your journey in four simple steps
@@ -391,8 +391,8 @@ const Agents = () => {
             >
               <h2 className="text-4xl font-bold mb-6 text-gray-900">Real People, Real Success</h2>
               <p className="text-gray-600 text-lg mb-6 leading-relaxed">
-                Meet our agents who have transformed their income by joining the XASH network. 
-                From students to shop owners, everyone can succeed with XASH.
+                Meet our agents who have transformed their income by joining the XashPay network. 
+                From students to shop owners, everyone can succeed with XashPay.
               </p>
               <div className="space-y-4">
                 <div className="flex items-start">
@@ -444,7 +444,7 @@ const Agents = () => {
             Ready to Start Your Journey?
           </h2>
           <p className="text-blue-100 mb-8 text-lg">
-            Join thousands of successful agents building their businesses with XASH. 
+            Join thousands of successful agents building their businesses with XashPay. 
             Zero investment, flexible hours, and unlimited earning potential.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

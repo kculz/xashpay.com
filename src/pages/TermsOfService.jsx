@@ -126,7 +126,7 @@ const TermsOfService = () => {
         <title>Terms of Service - Xash</title>
         <meta 
           name="description" 
-          content="Read the Terms of Service for Xash Solutions, outlining user responsibilities, prohibited activities, liability limitations, and termination policies." 
+          content="Read the Terms of Service for XashPay, outlining user responsibilities, prohibited activities, liability limitations, and termination policies." 
         />
       </Helmet>
       {/* Hero Section */}
@@ -145,7 +145,7 @@ const TermsOfService = () => {
                 Terms of Service
               </h1>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed mb-4">
-                Please read these terms carefully before using XASH services. 
+                Please read these terms carefully before using XashPay services. 
                 By using our services, you agree to these terms.
               </p>
               <p className="text-gray-500">
@@ -170,7 +170,7 @@ const TermsOfService = () => {
               <div>
                 <h3 className="text-xl font-bold text-yellow-900 mb-3">Important Legal Agreement</h3>
                 <p className="text-yellow-800 leading-relaxed">
-                  These terms constitute a legally binding agreement between you and Xash Solutions (Pvt) Ltd. 
+                  These terms constitute a legally binding agreement between you and XashPay (Pvt) Ltd. 
                   By using our services, you acknowledge that you have read, understood, and agree to be bound by 
                   these terms. If you do not agree to these terms, please do not use our services.
                 </p>
@@ -232,7 +232,7 @@ const TermsOfService = () => {
               <div className="flex-1">
                 <h2 className="text-2xl font-bold text-[#1A1A1A] mb-4">Intellectual Property</h2>
                 <p className="text-gray-600 leading-relaxed mb-4">
-                  All content, trademarks, logos, and data on our platform are owned by Xash Solutions (Pvt) Ltd 
+                  All content, trademarks, logos, and data on our platform are owned by XashPay (Pvt) Ltd 
                   or licensed to us. You may not copy, modify, distribute, sell, or lease any part of our services 
                   or included software, nor may you reverse engineer or attempt to extract the source code of that 
                   software.
@@ -340,7 +340,7 @@ const TermsOfService = () => {
             <CheckCircle className="w-12 h-12 text-[#1F6AE1] mx-auto mb-4" />
             <h3 className="text-xl font-bold text-[#1A1A1A] mb-3">Acknowledgment</h3>
             <p className="text-gray-700 leading-relaxed">
-              By using XASH services, you acknowledge that you have read these Terms of Service, 
+              By using XashPay services, you acknowledge that you have read these Terms of Service, 
               understood them, and agree to be bound by them. If you do not agree to these terms, 
               you must not use our services.
             </p>

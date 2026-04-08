@@ -185,13 +185,13 @@ const AMLPolicy = () => {
               <div>
                 <h3 className="text-xl font-bold text-[#1A1A1A] mb-3">Policy Statement</h3>
                 <p className="text-gray-700 leading-relaxed mb-4">
-                  Xash Solutions is committed to preventing money laundering, terrorist financing, and other 
+                  XashPay is committed to preventing money laundering, terrorist financing, and other 
                   financial crimes. We comply with all applicable regulations including the Bank Use Promotion Act, 
                   Money Laundering and Proceeds of Crime Act, and international standards set by the Financial 
                   Action Task Force (FATF).
                 </p>
                 <p className="text-gray-700 leading-relaxed">
-                  This policy applies to all customers, agents, partners, and employees of Xash Solutions. 
+                  This policy applies to all customers, agents, partners, and employees of XashPay. 
                   Compliance with this policy is mandatory and non-negotiable.
                 </p>
               </div>

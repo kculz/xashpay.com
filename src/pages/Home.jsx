@@ -55,7 +55,7 @@ export default function Home() {
                   <div className="flex items-center gap-3">
                     <div className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center font-bold">X</div>
                     <div>
-                      <div className="font-semibold text-lg leading-tight">XASH Bot</div>
+                      <div className="font-semibold text-lg leading-tight">XashPay Bot</div>
                       <div className="text-xs opacity-80">Online</div>
                     </div>
                   </div>
@@ -68,7 +68,7 @@ export default function Home() {
                   </div>
 
                   <div className="bg-white p-3 rounded-lg rounded-tl-none max-w-[85%] shadow-sm text-sm text-gray-800 relative">
-                    Hello! 👋 Welcome to XASH. I can help you purchase data bundles.<br/><br/>
+                    Hello! 👋 Welcome to XashPay. I can help you purchase data bundles.<br/><br/>
                     Please select your network:<br/>
                     1️⃣ Econet<br/>
                     2️⃣ NetOne<br/>

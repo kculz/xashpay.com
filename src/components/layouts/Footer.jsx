@@ -96,7 +96,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-blue-300">
           <div>
-            &copy; {new Date().getFullYear()} Xash Solutions. All rights reserved.
+            &copy; {new Date().getFullYear()} XashPay. All rights reserved.
           </div>
           <div className="flex gap-6">
             <Link to="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link>

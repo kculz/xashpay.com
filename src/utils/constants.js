@@ -1,6 +1,6 @@
 export const BRAND = {
-  name: 'XASH',
-  fullName: 'Xash Solutions',
+  name: 'XashPay',
+  fullName: 'XashPay',
   tagline: 'Buy, Sell & Earn — All on WhatsApp',
   description: 'A seamless payment service for individuals and businesses to buy/sell prepaid airtime, data, electricity, and other services all on 1 platform.',
   

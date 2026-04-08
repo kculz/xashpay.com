@@ -114,7 +114,7 @@ const PrivacyPolicy = () => {
               <div>
                 <h3 className="text-xl font-bold text-[#1A1A1A] mb-3">About This Policy</h3>
                 <p className="text-gray-700 leading-relaxed">
-                  This Privacy Policy describes how Xash Solutions (Pvt) Ltd collects, uses, and discloses your personal 
+                  This Privacy Policy describes how XashPay (Pvt) Ltd collects, uses, and discloses your personal 
                   information when you use our services. We are committed to protecting your privacy and ensuring the security 
                   of your personal data in compliance with Zimbabwe's data protection laws and international standards.
                 </p>

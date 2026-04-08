@@ -201,7 +201,7 @@ const DataProtection = () => {
               <div>
                 <h3 className="text-xl font-bold text-[#1A1A1A] mb-3">Our Commitment</h3>
                 <p className="text-gray-700 leading-relaxed mb-4">
-                  Xash Solutions is committed to protecting your personal data in compliance with the Data Protection 
+                  XashPay is committed to protecting your personal data in compliance with the Data Protection 
                   Act of Zimbabwe and international standards including GDPR principles. We implement comprehensive 
                   technical and organizational measures to ensure the security, confidentiality, and integrity of 
                   your personal information.

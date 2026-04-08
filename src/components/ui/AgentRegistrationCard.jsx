@@ -37,7 +37,7 @@ const AgentRegistrationCard = () => {
 
             {/* Title */}
             <h3 className="text-2xl md:text-3xl font-bold text-white mb-3">
-              XASH Agent
+              XashPay Agent
             </h3>
             <p className="text-blue-100 mb-8 text-lg">
               Join our network today
@@ -47,7 +47,7 @@ const AgentRegistrationCard = () => {
             <div className="space-y-4 mb-8">
               {/* WhatsApp Button */}
               <a
-                href={`https://wa.me/${BRAND.contacts.whatsapp.replace(/\D/g, '')}?text=Hello,%20I%20want%20to%20become%20a%20XASH%20agent`}
+                href={`https://wa.me/${BRAND.contacts.whatsapp.replace(/\D/g, '')}?text=Hello,%20I%20want%20to%20become%20a%20XashPay%20agent`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group block w-full bg-white hover:bg-green-50 rounded-2xl p-5 transition-all shadow-lg hover:shadow-xl transform hover:scale-105"
