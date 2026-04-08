@@ -1,185 +1,330 @@
 import { 
-  Smartphone, Wifi, Zap, Wallet, TrendingUp, Shield,
-  Phone, Globe, Clock, CheckCircle, Lock, Users,
-  BarChart3, Headphones, Layers, Code2, Database,
-  FileText, Settings, Sparkles, Building, Award, Target,
-  Users as UsersIcon, Globe as GlobeIcon, CreditCard
+  Smartphone, Globe, Shield, Clock, Headset, 
+  CheckCircle, Zap, Tv2, CreditCard, Ticket, Receipt, MapPin,
+  TrendingUp, Users, MessageCircle
 } from 'lucide-react';
 
-export const COMMISSION_DATA = [
-  { product: 'Econet USD Airtime', rate: '9.00%', color: 'text-purple-600' },
-  { product: 'Econet USD Data', rate: '9.00%', color: 'text-purple-600' },
-  { product: 'Netone USD Airtime', rate: '7.50%', color: 'text-blue-600' },
-  { product: 'Telecel USD Airtime', rate: '7.00%', color: 'text-green-600' },
-  { product: 'ZESA USD', rate: '1.20%', color: 'text-orange-600' },
-  { product: 'Equal WiFi', rate: '12.00%', color: 'text-indigo-600' },
+export const STATS = [
+  { value: '10,000+', label: 'Global Users' },
+  { value: '12+', label: 'Countries Covered' },
+  { value: '24/7', label: 'Support Available' },
+  { value: 'upto 10%', label: 'Commission' }
 ];
 
-export const FEATURES = [
-  {
-    icon: Smartphone,
-    title: 'Free POS Device',
-    description: 'Qualifying retail shops receive a Xash POS device at zero cost. Start selling immediately.',
-    color: 'bg-purple-600'
+export const SERVICES_DATA = [
+  { 
+    id: 'airtime-data',
+    name: 'Airtime & Data', 
+    icon: Smartphone, 
+    color: 'bg-blue-600',
+    description: 'Instantly top up any phone number across multiple countries.',
+    features: [
+      'Instant delivery within seconds',
+      'All major networks supported globally',
+      'Daily, weekly, and monthly bundles'
+    ],
+    availableIn: ['South Africa', 'Nigeria', 'Kenya', 'Zimbabwe', '+8 more']
+  },
+  { 
+    id: 'electricity',
+    name: 'Electricity', 
+    icon: Zap, 
+    color: 'bg-yellow-500',
+    description: 'Instant electricity bill payments across multiple countries.',
+    features: [
+      'Instant token generation',
+      'Prepaid and postpaid accounts',
+      '24/7 availability'
+    ],
+    availableIn: ['South Africa', 'Kenya', 'Nigeria', 'Zimbabwe']
+  },
+  { 
+    id: 'tv',
+    name: 'TV Subscriptions', 
+    icon: Tv2, 
+    color: 'bg-indigo-600',
+    description: 'Subscribe to DSTV, GOtv, and other TV packages globally.',
+    features: [
+      'All DSTV packages available',
+      'GOtv subscriptions across Africa',
+      'Easy package upgrades/downgrades'
+    ],
+    availableIn: ['South Africa', 'Nigeria', 'Kenya', 'Zimbabwe', 'Tanzania']
   },
   {
-    icon: Wallet,
-    title: 'One Unified Balance',
-    description: 'Manage airtime, bundles, and ZESA from a single float. No need for separate devices.',
-    color: 'bg-blue-600'
+    id: 'bills',
+    name: 'Bills Payment',
+    icon: CreditCard,
+    color: 'bg-[#0B3C5D]',
+    description: 'DSTV, water bills, insurance, WiFi, school fees.',
+    features: [
+      'Municipal water bills',
+      'Insurance payments',
+      'School fees'
+    ],
+    availableIn: ['South Africa', 'Kenya', 'Nigeria', 'Uganda', 'Zimbabwe']
   },
   {
-    icon: TrendingUp,
-    title: 'Earn Daily Commission',
-    description: 'Earn competitive commission on every transaction. Payouts processed weekly.',
-    color: 'bg-green-600'
+    id: 'vouchers',
+    name: 'Vouchers',
+    icon: Ticket,
+    color: 'bg-green-600',
+    description: 'Taura Airtime, WiFi, OTT, and other vouchers.',
+    features: [
+      'Taura Airtime vouchers',
+      'WiFi vouchers',
+      'OTT service vouchers'
+    ],
+    availableIn: ['South Africa', 'Kenya', 'Nigeria', 'Zimbabwe']
   }
 ];
 
-export const PRODUCTS = [
-  { 
-    name: 'Airtime', 
-    icon: Phone, 
-    color: 'bg-purple-600',
-    description: 'Sell airtime for all major networks: Econet, NetOne, Telecel'
+export const COVERAGE_DATA = [
+  {
+    region: 'Southern Africa',
+    description: 'Comprehensive coverage across Southern African nations',
+    countries: [
+      {
+        name: 'Zimbabwe',
+        primary: true,
+        services: ['Airtime', 'Data', 'Electricity', 'TV', 'Water'],
+        networks: ['Econet', 'NetOne', 'Telecel', '+2 more']
+      },
+      {
+        name: 'South Africa',
+        primary: false,
+        services: ['Airtime', 'Data', 'TV'],
+        networks: ['Vodacom', 'MTN', 'Cell C', '+2 more']
+      },
+      {
+        name: 'Botswana',
+        primary: false,
+        services: ['Airtime', 'Data'],
+        networks: ['Mascom', 'BTC', 'Orange']
+      },
+      {
+        name: 'DR Congo',
+        primary: false,
+        services: ['Airtime', 'Data'],
+        networks: ['Vodacom', 'Airtel', 'Orange', '+1 more']
+      }
+    ]
   },
-  { 
-    name: 'Data Bundles', 
-    icon: Wifi, 
-    color: 'bg-blue-600',
-    description: 'Econet data bundles for smartphones and devices'
+  {
+    region: 'East Africa',
+    description: 'Growing presence in East African markets',
+    countries: [
+      {
+        name: 'Kenya',
+        primary: false,
+        services: ['Airtime', 'Data'],
+        networks: ['Safaricom', 'Airtel', 'Telkom']
+      },
+      {
+        name: 'Tanzania',
+        primary: false,
+        services: ['Airtime', 'Data'],
+        networks: ['Vodacom', 'Airtel', 'Tigo', '+1 more']
+      },
+      {
+        name: 'Uganda',
+        primary: false,
+        services: ['Airtime', 'Data'],
+        networks: ['MTN', 'Airtel', 'Uganda Telecom']
+      },
+      {
+        name: 'Ethiopia',
+        primary: false,
+        services: ['Airtime', 'Data'],
+        networks: ['Ethio Telecom', 'Safaricom Ethiopia']
+      },
+      {
+        name: 'Somalia',
+        primary: false,
+        services: ['Airtime', 'Data'],
+        networks: ['Hormuud', 'Golis', 'Somtel']
+      }
+    ]
   },
-  { 
-    name: 'ZESA Tokens', 
-    icon: Zap, 
-    color: 'bg-orange-600',
-    description: 'Prepaid electricity tokens for ZESA customers'
+  {
+    region: 'West Africa',
+    description: 'Expanding services to West African countries',
+    countries: [
+      {
+        name: 'Nigeria',
+        primary: false,
+        services: ['Airtime', 'Data', 'TV'],
+        networks: ['MTN', 'Airtel', 'Glo', '+2 more']
+      }
+    ]
   },
-  { 
-    name: 'Equal WiFi', 
-    icon: Globe, 
-    color: 'bg-indigo-600',
-    description: 'High-speed WiFi connectivity solutions'
+  {
+    region: 'South Asia',
+    description: 'Serving South Asian markets',
+    countries: [
+      {
+        name: 'India',
+        primary: false,
+        services: ['Airtime', 'Data'],
+        networks: ['Jio', 'Airtel', 'Vodafone Idea', '+1 more']
+      },
+      {
+        name: 'Pakistan',
+        primary: false,
+        services: ['Airtime', 'Data'],
+        networks: ['Jazz', 'Telenor', 'Zong', '+1 more']
+      }
+    ]
   }
 ];
 
 export const HOW_IT_WORKS = [
   {
-    step: 1,
-    title: 'Apply for Device',
-    description: 'Qualifying retail shops apply for a free Xash POS device with no upfront costs',
-    color: 'bg-purple-600'
+    step: '1',
+    title: 'Register on WhatsApp',
+    description: 'Message us with your phone number to get started'
   },
   {
-    step: 2,
-    title: 'Load Your Float',
-    description: 'Use your own capital to load your wallet via bank transfer or agent',
-    color: 'bg-purple-500'
+    step: '2',
+    title: 'Complete Verification',
+    description: 'Simple verification process for security'
   },
   {
-    step: 3,
-    title: 'Sell & Earn Commission',
-    description: 'Sell airtime, bundles, and ZESA. Earn commission on every sale automatically',
-    color: 'bg-green-600'
+    step: '3',
+    title: 'Start Buying/Selling',
+    description: 'Access services across multiple countries'
+  },
+  {
+    step: '4',
+    title: 'Earn Commission',
+    description: 'Get upto 10% commission on every sale'
   }
 ];
 
-export const WHY_CHOOSE_XASH = [
+export const SUCCESS_STORIES = [
+  {
+    quote: "Earning commissions has never been easier. I sell services across Africa from my phone!",
+    name: "Sarah K.",
+    role: "Reseller Agent",
+    location: "Lagos, Nigeria",
+    initials: "SK"
+  },
+  {
+    quote: "XashPay transformed my business. I now serve customers in 5 different countries!",
+    name: "Tendai M.",
+    role: "Small Business Owner",
+    location: "Harare, Zimbabwe",
+    initials: "TM"
+  },
+  {
+    quote: "I pay all my family bills back home in Kenya while living in the UK. Super convenient!",
+    name: "James T.",
+    role: "International Customer",
+    location: "London, UK",
+    initials: "JT"
+  }
+];
+
+export const EARNING_ESTIMATES = [
+  {
+    service: "International Airtime",
+    volume: "$100-500 daily",
+    commission: "5-10%",
+    frequency: "High Volume"
+  },
+  {
+    service: "Electricity Bills",
+    volume: "$200-1,000 weekly",
+    commission: "5-10%",
+    frequency: "Regular"
+  },
+  {
+    service: "TV Subscriptions",
+    volume: "$150-500 monthly",
+    commission: "5-10%",
+    frequency: "Subscription Based"
+  },
+  {
+    service: "Data Bundles",
+    volume: "$50-300 daily",
+    commission: "5-10%",
+    frequency: "Consistent"
+  }
+];
+
+export const FAQ_DATA = [
+  {
+    question: "How does XashPay work?",
+    answer: "XashPay is a WhatsApp-based payment service. Simply message us, register your number, and start buying or selling services across 12+ countries instantly."
+  },
+  {
+    question: "What countries do you cover?",
+    answer: "We cover 12+ countries including South Africa, Nigeria, Kenya, Zimbabwe, Ethiopia, Tanzania, Uganda, India, Pakistan, Botswana, DR Congo, and Somalia."
+  },
+  {
+    question: "How do I become a reseller?",
+    answer: "Message us on WhatsApp to register as a reseller. No investment required - you can start earning upto 10% commission immediately."
+  },
+  {
+    question: "Is XashPay secure?",
+    answer: "Yes, we use bank-level encryption and secure payment processing. All transactions are protected and monitored 24/7."
+  },
+  {
+    question: "When do I get my commission?",
+    answer: "Commissions are paid instantly after each successful transaction directly to your registered payment method."
+  }
+];
+
+export const WHY_CHOOSE_US = [
+  {
+    icon: Globe,
+    title: 'Global Coverage',
+    description: 'Access services across 12+ countries worldwide',
+    color: 'bg-blue-600'
+  },
   {
     icon: Shield,
-    title: 'Bank-Grade Security',
-    description: 'Enterprise-grade encryption and security protocols protect every transaction',
-    color: 'bg-purple-600'
-  },
-  {
-    icon: Clock,
-    title: 'Real-time Processing',
-    description: 'Instant transaction processing with immediate SMS confirmations',
+    title: 'Secure Payments',
+    description: 'Bank-level security for all transactions',
     color: 'bg-blue-600'
   },
   {
-    icon: Headphones,
-    title: 'Local Zimbabwe Support',
-    description: 'Based in Mutare with dedicated technical support team ready to assist',
-    color: 'bg-green-600'
-  },
-  {
-    icon: BarChart3,
-    title: 'Performance Analytics',
-    description: 'Detailed reporting and analytics to monitor sales and earnings',
-    color: 'bg-orange-600'
-  }
-];
-
-export const API_FEATURES = [
-  {
-    icon: Lock,
-    title: 'Secure API',
-    description: 'Bank-grade encryption for all API transactions with OAuth 2.0',
-    color: 'bg-purple-600'
-  },
-  {
-    icon: Zap,
-    title: 'Real-time Delivery',
-    description: 'Instant delivery of tokens and PINs with webhook notifications',
+    icon: Receipt,
+    title: 'Earn Commission',
+    description: 'Upto 10% commission for resellers',
     color: 'bg-blue-600'
   },
   {
-    icon: Layers,
-    title: 'Scalable Infrastructure',
-    description: 'Built to handle high transaction volumes with 99.9% uptime',
-    color: 'bg-green-600'
-  },
-  {
-    icon: FileText,
-    title: 'Comprehensive Docs',
-    description: 'Detailed API documentation with code samples and SDKs',
-    color: 'bg-orange-600'
-  },
-  {
-    icon: Code2,
-    title: 'Easy Integration',
-    description: 'Simple REST API with support for multiple programming languages',
-    color: 'bg-indigo-600'
-  },
-  {
-    icon: Headphones,
-    title: 'Developer Support',
-    description: 'Dedicated technical support for integration assistance',
-    color: 'bg-purple-600'
+    icon: Headset,
+    title: '24/7 Support',
+    description: 'Instant WhatsApp support anytime',
+    color: 'bg-blue-600'
   }
 ];
 
-export const STATS = [
-  { value: '500+', label: 'Active Agents', color: 'text-purple-600' },
-  { value: '$2M+', label: 'Monthly Volume', color: 'text-blue-600' },
-  { value: '50K+', label: 'Daily Transactions', color: 'text-green-600' },
-  { value: '99.9%', label: 'System Uptime', color: 'text-orange-600' }
-];
-
-export const PARTNERS = [
-  { name: 'Econet Wireless', type: 'Network Partner', logoColor: 'text-red-600' },
-  { name: 'NetOne', type: 'Network Partner', logoColor: 'text-blue-600' },
-  { name: 'Telecel', type: 'Network Partner', logoColor: 'text-green-600' },
-  { name: 'ZESA', type: 'Utility Partner', logoColor: 'text-yellow-600' },
-  { name: 'Reserve Bank of Zimbabwe', type: 'Regulatory Compliance', logoColor: 'text-purple-600' },
-  { name: 'InnBucks', type: 'Payment Partner', logoColor: 'text-indigo-600' },
-];
-
-export const COMPANY_INFO = {
-  name: 'Xash Solutions (Private) Limited',
-  address: '63 Embassy Building, Aerodrome Road, Mutare, Zimbabwe',
-  email: 'info@xash.network',
-  supportEmail: 'support@xash.network',
-  phone: '+263 77 932 5039',
-  registration: 'Private Limited Company registered in Zimbabwe',
-  lastUpdated: '01 January 2026'
-};
-
-export const LEGAL_PAGES = [
-  { path: '/privacy-policy', label: 'Privacy Policy' },
-  { path: '/terms-of-service', label: 'Terms of Service' },
-  { path: '/aml-policy', label: 'AML/KYC Policy' },
-  { path: '/data-protection', label: 'Data Protection' },
-  { path: '/cookie-policy', label: 'Cookie Policy' },
+export const RESELLER_BENEFITS = [
+  {
+    title: 'Global Reach',
+    description: 'Sell services in 12+ countries from your phone. Your market is the world.',
+    highlight: '12+ Countries',
+    icon: Globe
+  },
+  {
+    title: 'High Commissions',
+    description: 'Earn upto 10% commission on every transaction. The more you sell, the more you earn.',
+    highlight: 'upto 10% Commission',
+    icon: Receipt
+  },
+  {
+    title: '24/7 Earning',
+    description: 'Our WhatsApp system works round the clock. Earn money anytime, anywhere.',
+    highlight: 'Always Active',
+    icon: Clock
+  },
+  {
+    title: 'No Risk',
+    description: 'No upfront investment required. Start earning with zero financial risk.',
+    highlight: 'Zero Investment',
+    icon: Shield
+  }
 ];
