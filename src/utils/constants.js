@@ -8,7 +8,7 @@ export const BRAND = {
     address: '63 Embassy Building, Aerodrome RD Mutare',
     email: 'info@xash.network',
     phone: '+263 716 409 412',
-    whatsapp: '+27 655 971 539',
+    whatsapp: '+27 65 597 1539',
     support: '+263 716 409 412'
   },
   

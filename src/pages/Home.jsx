@@ -1,621 +1,236 @@
-import { motion } from 'framer-motion';
-import { ArrowRight, Shield, Smartphone, Wallet, CheckCircle, TrendingUp, Star, Building, Target, Users, Phone, Zap, Wifi, Globe, Sparkles, BarChart3, Award } from 'lucide-react';
-import { useState } from 'react';
+import { ArrowRight, MessageCircle, Star, Users } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import Button from '../components/ui/Button';
+import Card from '../components/ui/Card';
+import PillBadge from '../components/ui/PillBadge';
+import { STATS, SERVICES_DATA, WHY_CHOOSE_US, SUCCESS_STORIES, HOW_IT_WORKS } from '../../data/constants';
 
-const ImageWithSkeleton = ({ src, alt, className }) => {
-  const [loaded, setLoaded] = useState(false);
-  
+export default function Home() {
   return (
-    <div className={`relative ${className}`}>
-      {!loaded && (
-        <div className="absolute inset-0 bg-gradient-to-r from-gray-200 via-gray-300 to-gray-200 animate-pulse rounded-2xl"></div>
-      )}
-      <img
-        src={src}
-        alt={alt}
-        onLoad={() => setLoaded(true)}
-        className={`${className} transition-opacity duration-300 ${loaded ? 'opacity-100' : 'opacity-0'}`}
-      />
-    </div>
-  );
-};
-
-const Home = () => {
-  const FEATURES = [
-    {
-      icon: Smartphone,
-      title: 'Free POS Device',
-      description: 'Qualifying retail shops receive a Xash POS device at zero cost. Start selling immediately.',
-      color: '#1F6AE1'
-    },
-    {
-      icon: Wallet,
-      title: 'One Unified Balance',
-      description: 'Manage airtime, bundles, and ZESA from a single float. No need for separate devices.',
-      color: '#0B3C5D'
-    },
-    {
-      icon: TrendingUp,
-      title: 'Earn Daily Commission',
-      description: 'Earn competitive commission on every transaction. Payouts processed weekly.',
-      color: '#F5B700'
-    }
-  ];
-
-  const STATS = [
-    { value: '500+', label: 'Active Agents', color: '#1F6AE1', icon: Users },
-    { value: '$2K+', label: 'Monthly Volume', color: '#0B3C5D', icon: BarChart3 },
-    { value: '5K+', label: 'Daily Transactions', color: '#F5B700', icon: TrendingUp },
-    { value: '99.9%', label: 'System Uptime', color: '#1F6AE1', icon: Award }
-  ];
-
-  const WHY_CHOOSE_XASH = [
-    {
-      icon: Shield,
-      title: 'Bank-Grade Security',
-      description: 'Enterprise-grade encryption and security protocols protect every transaction',
-      color: '#1F6AE1'
-    },
-    {
-      icon: Smartphone,
-      title: 'Real-time Processing',
-      description: 'Instant transaction processing with immediate SMS confirmations',
-      color: '#0B3C5D'
-    },
-    {
-      icon: Users,
-      title: 'Local Zimbabwe Support',
-      description: 'Based in Mutare with dedicated technical support team ready to assist',
-      color: '#F5B700'
-    },
-    {
-      icon: TrendingUp,
-      title: 'Performance Analytics',
-      description: 'Detailed reporting and analytics to monitor sales and earnings',
-      color: '#1F6AE1'
-    }
-  ];
-
-  const PARTNERS = [
-    { name: 'Econet Wireless', type: 'Network Partner' },
-    { name: 'NetOne', type: 'Network Partner' },
-    { name: 'Telecel', type: 'Network Partner' },
-    { name: 'ZETDC', type: 'Utility Partner' },
-    { name: 'Reserve Bank', type: 'Regulatory' },
-    { name: 'InnBucks', type: 'Payment Partner' },
-  ];
-
-  const PRODUCTS = [
-    { 
-      name: 'Airtime', 
-      icon: Phone, 
-      color: '#1F6AE1',
-      description: 'Sell airtime for all major networks: Econet, NetOne, Telecel'
-    },
-    { 
-      name: 'Data Bundles', 
-      icon: Wifi, 
-      color: '#0B3C5D',
-      description: 'Econet data bundles for smartphones and devices'
-    },
-    { 
-      name: 'ZETDC Tokens', 
-      icon: Zap, 
-      color: '#F5B700',
-      description: 'Prepaid electricity tokens for ZESA customers'
-    },
-    { 
-      name: 'Equal WiFi', 
-      icon: Globe, 
-      color: '#1F6AE1',
-      description: 'High-speed WiFi connectivity solutions'
-    }
-  ];
-
-  // Placeholder images - replace with actual imported images
-  const heroImage = "https://images.unsplash.com/photo-1556742502-ec7c0e9f34b1?w=800&q=80";
-  const businessImage = "https://images.unsplash.com/photo-1556740758-90de374c12ad?w=800&q=80";
-  const shopOwnerImage = "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&q=80";
-
-  return (
-    <div className="pt-20 bg-white overflow-hidden">
-      {/* Hero Section with Image */}
-      <section className="relative min-h-screen flex items-center bg-gradient-to-br from-white via-[#F5F7FA] to-white overflow-hidden">
-        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#1F6AE1]/5 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-[#F5B700]/5 rounded-full blur-3xl"></div>
-        
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            {/* Left Content */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-            >
-              <motion.div
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 0.2 }}
-                className="inline-flex items-center px-5 py-3 rounded-full bg-white border-2 border-[#1F6AE1]/30 text-[#1F6AE1] text-sm font-semibold mb-8 shadow-lg"
-              >
-                <Sparkles className="mr-2" size={18} />
-                Zimbabwe's Trusted Fintech Partner
-              </motion.div>
-
-              <motion.h1
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.3 }}
-                className="text-5xl sm:text-6xl lg:text-7xl font-black leading-tight mb-6"
-              >
-                <span className="text-[#1A1A1A]">Digital</span>
-                <br />
-                <span className="text-[#1A1A1A]">Payments</span>
-                <br />
-                <span className="bg-gradient-to-r from-[#1F6AE1] to-[#0B3C5D] bg-clip-text text-transparent">
-                  Made Simple
-                </span>
-              </motion.h1>
-
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.4 }}
-                className="text-xl text-gray-600 mb-10 leading-relaxed max-w-xl"
-              >
-                Xash provides retail-focused POS solutions that empower shops to sell airtime, 
-                bundles, and ZESA tokens while earning commission on every transaction.
-              </motion.p>
-
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.5 }}
-                className="flex flex-col sm:flex-row gap-4 mb-12"
-              >
-                <motion.button
-                  whileHover={{ scale: 1.05, boxShadow: "0 20px 40px rgba(31, 106, 225, 0.3)" }}
-                  whileTap={{ scale: 0.95 }}
-                  style={{ backgroundColor: '#1F6AE1' }}
-                  className="group text-white px-10 py-5 rounded-xl font-bold text-lg transition-all flex items-center justify-center shadow-2xl"
-                >
-                  Get Started
-                  <ArrowRight className="ml-2 group-hover:translate-x-2 transition-transform" size={24} />
-                </motion.button>
-                
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="bg-white text-[#1F6AE1] px-10 py-5 rounded-xl font-bold text-lg border-2 border-[#1F6AE1] transition-all shadow-lg hover:bg-[#1F6AE1] hover:text-white"
-                >
-                  Explore Xash POS
-                </motion.button>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.6 }}
-                className="flex flex-wrap gap-6"
-              >
-                {[
-                  { icon: Building, label: 'Zimbabwe-Based', color: '#1F6AE1' },
-                  { icon: Shield, label: 'Secure & Compliant', color: '#F5B700' },
-                  { icon: Target, label: 'Retail-Focused', color: '#0B3C5D' }
-                ].map((badge, idx) => (
-                  <div key={idx} className="flex items-center space-x-2 bg-white rounded-lg px-4 py-2 shadow-md">
-                    <badge.icon style={{ color: badge.color }} size={20} />
-                    <span className="text-sm font-semibold text-[#1A1A1A]">{badge.label}</span>
-                  </div>
-                ))}
-              </motion.div>
-            </motion.div>
-
-            {/* Right Content - Hero Image with Stats Overlay */}
-            <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-              className="relative"
-            >
-              <div className="relative rounded-3xl overflow-hidden shadow-2xl">
-                <ImageWithSkeleton
-                  src={heroImage}
-                  alt="POS System in use"
-                  className="w-full h-[600px] object-cover"
-                />
-                
-                {/* Overlay Card */}
-                <div className="absolute bottom-6 left-6 right-6 bg-white/95 backdrop-blur-sm rounded-2xl p-6 shadow-2xl">
-                  <div className="flex items-center justify-between mb-4">
-                    <span className="text-sm font-medium text-gray-600">Today's Earnings</span>
-                    <div className="flex items-center text-[#F5B700]">
-                      <TrendingUp size={20} className="mr-1" />
-                      <span className="text-sm font-semibold">+18%</span>
+    <div className="pt-20">
+      {/* Hero Section */}
+      <section className="bg-[#0B3C5D] text-white py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12">
+          <div className="flex-1 space-y-8 z-10 text-center lg:text-left">
+            <div className="flex flex-wrap justify-center lg:justify-start gap-4">
+              <PillBadge variant="blue" className="bg-white/10 text-white border-white/20">
+                12+ Countries
+              </PillBadge>
+              <PillBadge variant="blue" className="bg-white/10 text-white border-white/20">
+                upto 10% Commission
+              </PillBadge>
+              <PillBadge variant="blue" className="bg-white/10 text-white border-white/20">
+                Secure Payments
+              </PillBadge>
+            </div>
+            
+            <h1 className="text-5xl lg:text-6xl font-bold tracking-tight text-white leading-tight">
+              Global Payments <br className="hidden lg:block"/> Made Simple
+            </h1>
+            
+            <p className="text-xl text-blue-100 max-w-2xl mx-auto lg:mx-0">
+              Buy or sell international airtime, data, electricity, and vouchers across multiple countries via WhatsApp. Join our global network of satisfied customers and earning resellers.
+            </p>
+            
+            <div className="flex flex-col sm:flex-row justify-center lg:justify-start gap-4 pt-4">
+              <a href="https://wa.me/27655971539?text=Hello" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
+                <Button className="w-full text-lg items-center gap-2 bg-[#F5B700] text-[#0B3C5D] hover:bg-yellow-400 border border-[#F5B700]">
+                  <MessageCircle size={20} />
+                  Start on WhatsApp
+                </Button>
+              </a>
+              <Link to="/earn" className="w-full sm:w-auto">
+                <Button variant="outline" className="w-full text-lg items-center gap-2 border-white text-white hover:bg-white hover:text-[#0B3C5D]">
+                  <Users size={20} />
+                  Become a Reseller
+                </Button>
+              </Link>
+            </div>
+          </div>
+          
+          <div className="flex-1 w-full max-w-md relative z-10 mx-auto">
+            <div className="bg-white rounded-[3rem] p-4 shadow-2xl relative">
+              <div className="bg-gray-100 rounded-[2.5rem] overflow-hidden h-[600px] border-4 border-gray-100 flex flex-col">
+                <div className="bg-[#075E54] text-white p-4 flex items-center justify-between">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center font-bold">X</div>
+                    <div>
+                      <div className="font-semibold text-lg leading-tight">XASH Bot</div>
+                      <div className="text-xs opacity-80">Online</div>
                     </div>
                   </div>
-                  <div className="text-4xl font-black text-[#1A1A1A] mb-4">$45.20</div>
-                  <div className="grid grid-cols-3 gap-3">
-                    {STATS.slice(0, 3).map((stat, idx) => (
-                      <div key={idx} className="bg-[#F5F7FA] rounded-lg p-3 text-center">
-                        <div className="text-lg font-bold text-[#1A1A1A]">{stat.value}</div>
-                        <div className="text-xs text-gray-600">{stat.label}</div>
-                      </div>
-                    ))}
+                </div>
+                {/* Scrollable Container */}
+                <div className="flex-1 bg-[#ECE5DD] p-4 space-y-4 overflow-y-auto custom-scrollbar">
+                  <div className="bg-[#DCF8C6] p-3 rounded-lg rounded-tr-none max-w-[85%] ml-auto shadow-sm text-sm text-gray-800 relative">
+                    <span className="block pr-8">Hi, I want to buy data</span>
+                    <div className="text-[10px] text-gray-500 absolute bottom-1 right-2 w-full text-right">10:30 ✓✓</div>
+                  </div>
+
+                  <div className="bg-white p-3 rounded-lg rounded-tl-none max-w-[85%] shadow-sm text-sm text-gray-800 relative">
+                    Hello! 👋 Welcome to XASH. I can help you purchase data bundles.<br/><br/>
+                    Please select your network:<br/>
+                    1️⃣ Econet<br/>
+                    2️⃣ NetOne<br/>
+                    3️⃣ Telecel
+                    <div className="text-[10px] text-gray-400 absolute bottom-1 right-2">10:30</div>
+                  </div>
+                  
+                  <div className="bg-[#DCF8C6] p-2 rounded-lg rounded-tr-none max-w-[80%] ml-auto shadow-sm text-sm text-gray-800 relative">
+                    <span className="block pr-8 font-mono">1</span>
+                    <div className="text-[10px] text-gray-500 absolute bottom-1 right-2 w-full text-right">10:31 ✓✓</div>
+                  </div>
+                  
+                  <div className="bg-white p-3 rounded-lg rounded-tl-none max-w-[85%] shadow-sm text-sm text-gray-800 relative">
+                    Please enter the phone number you want to recharge (e.g. +26377...)
+                    <div className="text-[10px] text-gray-400 mt-2 text-right">10:31</div>
+                  </div>
+                  
+                  <div className="bg-[#DCF8C6] p-2 rounded-lg rounded-tr-none max-w-[80%] ml-auto shadow-sm text-sm text-gray-800 relative">
+                    <span className="block pr-8 font-mono">+263771234567</span>
+                    <div className="text-[10px] text-gray-500 absolute bottom-1 right-2 w-full text-right">10:32 ✓✓</div>
+                  </div>
+                  
+                  <div className="bg-white p-3 rounded-lg rounded-tl-none max-w-[85%] shadow-sm text-sm text-gray-800 relative">
+                    ✅ Success! Econet 1.5GB Daily Data sent to +263771234567.<br/><br/>
+                    Receipt: #XSH-88219<br/>
+                    New Wallet Balance: $15.50
+                    <div className="text-[10px] text-gray-400 text-right mt-1">10:32</div>
                   </div>
                 </div>
-              </div>
-
-              {/* Floating Badge */}
-              <motion.div
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 1, duration: 0.5 }}
-                className="absolute -top-6 -right-6 bg-[#F5B700] text-white rounded-2xl px-6 py-4 shadow-2xl"
-              >
-                <div className="text-center">
-                  <div className="text-3xl font-black">500+</div>
-                  <div className="text-xs font-semibold">Active Agents</div>
+                {/* Fake Input */}
+                <div className="bg-gray-100 p-2 flex items-center gap-2">
+                   <div className="flex-1 bg-white rounded-full py-2 px-4 text-sm text-gray-400">Message</div>
+                   <div className="bg-[#075E54] w-10 h-10 rounded-full flex items-center justify-center text-white shrink-0 shadow-lg cursor-pointer">
+                      <ArrowRight size={20} />
+                   </div>
                 </div>
-              </motion.div>
-            </motion.div>
+              </div>
+            </div>
+            {/* Flags */}
+            <div className="absolute -bottom-8 -right-8 flex gap-2 scale-150 animate-bounce delay-1000">🇿🇦 🇳🇬 🇰🇪 🇿🇼</div>
           </div>
         </div>
       </section>
 
       {/* Stats Section */}
-      <section className="py-20" style={{ backgroundColor: '#0B3C5D' }}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold mb-4 text-white">Trusted by Retailers Across Zimbabwe</h2>
-            <p className="text-[#F5F7FA] max-w-2xl mx-auto text-lg">
-              Empowering small businesses with digital financial solutions
-            </p>
-          </div>
-
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {STATS.map((stat, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="text-center"
-              >
-                <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 hover:bg-white/20 transition-all">
-                  <stat.icon className="w-12 h-12 text-white mx-auto mb-4" />
-                  <div className="text-5xl font-black mb-2 text-white">
-                    {stat.value}
-                  </div>
-                  <div className="text-[#F5F7FA] font-medium">{stat.label}</div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* What You Can Sell - Cards on Dark Background */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-5xl font-black text-[#1A1A1A] mb-4">
-              What You Can Sell
-            </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Diverse product range for maximum earning potential
-            </p>
-          </motion.div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-            {PRODUCTS.map((product, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                whileHover={{ y: -10, scale: 1.02 }}
-                className="bg-white p-8 rounded-2xl border-2 border-gray-100 hover:border-[#1F6AE1] transition-all group shadow-lg hover:shadow-2xl"
-              >
-                <div 
-                  style={{ backgroundColor: product.color }}
-                  className="w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform shadow-xl"
-                >
-                  <product.icon className="text-white" size={36} />
-                </div>
-                <h4 className="font-bold text-[#1A1A1A] text-xl mb-3 text-center">{product.name}</h4>
-                <p className="text-gray-600 text-sm text-center leading-relaxed">{product.description}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Features with Image - Side by Side */}
-      <section className="py-24 bg-[#F5F7FA]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-16 items-center mb-20">
-            {/* Image */}
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="relative"
-            >
-              <div className="rounded-3xl overflow-hidden shadow-2xl">
-                <ImageWithSkeleton
-                  src={businessImage}
-                  alt="Local business using POS"
-                  className="w-full h-[500px] object-cover"
-                />
+      <section className="bg-white border-b border-gray-100 py-12 px-4 shadow-sm z-20 relative">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 divide-x divide-gray-100">
+            {STATS.map((stat, idx) => (
+              <div key={idx} className="text-center px-4">
+                <div className="text-3xl md:text-4xl font-bold text-[#0B3C5D] mb-1">{stat.value}</div>
+                <div className="text-xs md:text-sm font-semibold text-gray-500 uppercase tracking-widest">{stat.label}</div>
               </div>
-              
-              {/* Floating Stats */}
-              <motion.div
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.3 }}
-                className="absolute -bottom-6 -right-6 bg-white rounded-2xl p-6 shadow-2xl border border-gray-100"
-              >
-                <div className="flex items-center space-x-4">
-                  <div style={{ backgroundColor: '#1F6AE1' }} className="w-12 h-12 rounded-xl flex items-center justify-center">
-                    <TrendingUp className="text-white" size={24} />
-                  </div>
-                  <div>
-                    <div className="text-2xl font-black text-[#1A1A1A]">$2K+</div>
-                    <div className="text-xs text-gray-600 font-medium">Monthly Volume</div>
-                  </div>
-                </div>
-              </motion.div>
-            </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
 
-            {/* Content */}
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-            >
-              <h2 className="text-5xl font-black mb-6 text-[#1A1A1A]">Empowering Local Businesses</h2>
-              <p className="text-gray-600 text-xl mb-8 leading-relaxed">
-                Join thousands of shop owners across Zimbabwe who are earning extra income by providing 
-                essential digital services to their communities.
-              </p>
-              
-              <div className="space-y-6">
-                {FEATURES.map((feature, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, x: 20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: index * 0.1 }}
-                    className="flex items-start bg-white p-6 rounded-2xl shadow-md hover:shadow-xl transition-all"
-                  >
-                    <div 
-                      style={{ backgroundColor: feature.color }}
-                      className="w-14 h-14 rounded-xl flex items-center justify-center mr-5 flex-shrink-0 shadow-lg"
-                    >
-                      <feature.icon className="text-white" size={28} />
+      {/* Services Section */}
+      <section className="bg-gray-50 py-24 px-4">
+        <div className="max-w-7xl mx-auto text-center">
+          <PillBadge variant="gold" className="mb-6">Our Services</PillBadge>
+          <h2 className="text-4xl font-bold text-[#0B3C5D] mb-16">All Your Payment Needs</h2>
+          
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8 text-left">
+            {SERVICES_DATA.map((service) => {
+              const Icon = service.icon;
+              return (
+                <Card key={service.id} className="p-8 group hover:-translate-y-2 transition-transform duration-300">
+                  <div className={`w-16 h-16 ${service.color} rounded-full flex items-center justify-center text-white mb-6 shadow-lg group-hover:scale-110 transition-transform`}>
+                    <Icon size={28} />
+                  </div>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-3">{service.name}</h3>
+                  <p className="text-gray-600 font-medium mb-6 text-sm">{service.description}</p>
+                  <Link to="/services" className="text-[#0B3C5D] font-bold flex items-center gap-2 group-hover:text-[#F5B700] transition-colors">
+                    Get Started <ArrowRight size={18} />
+                  </Link>
+                </Card>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* How it Works / 4 steps */}
+      <section className="bg-white py-24 px-4">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+             <PillBadge variant="blue" className="mb-6">Simple Process</PillBadge>
+             <h2 className="text-4xl font-bold text-[#0B3C5D] mb-4">How It Works</h2>
+             <p className="text-xl text-gray-600">Get started in 4 simple steps and join our global network</p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 relative">
+            <div className="hidden md:block absolute top-[45%] left-10 right-10 h-0.5 bg-gray-200 -z-10"></div>
+            {HOW_IT_WORKS.map((step, idx) => (
+              <div key={idx} className="text-center">
+                <div className="w-16 h-16 bg-[#0B3C5D] text-white text-2xl font-bold rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg border-4 border-white">
+                  {step.step}
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">{step.title}</h3>
+                <p className="text-gray-600 font-medium px-4">{step.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+      
+      {/* Success Stories */}
+      <section className="bg-[#E6F0F9] py-24 px-4">
+         <div className="max-w-7xl mx-auto">
+           <div className="text-center mb-16">
+              <PillBadge variant="blue" className="mb-6">Success Stories</PillBadge>
+              <h2 className="text-4xl font-bold text-[#0B3C5D]">Trusted Globally</h2>
+              <p className="text-xl text-[#0B3C5D]/80 mt-4">See what our global customers and agents are saying</p>
+           </div>
+           
+           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {SUCCESS_STORIES.map((story, idx) => (
+                <Card key={idx} className="p-8">
+                  <div className="flex items-center gap-1 text-[#F5B700] mb-6">
+                    <Star fill="currentColor" size={20} />
+                    <Star fill="currentColor" size={20} />
+                    <Star fill="currentColor" size={20} />
+                    <Star fill="currentColor" size={20} />
+                    <Star fill="currentColor" size={20} />
+                  </div>
+                  <p className="text-gray-700 italic text-lg mb-8">&quot;{story.quote}&quot;</p>
+                  
+                  <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 bg-[#0B3C5D] text-white flex items-center justify-center rounded-full font-bold">
+                      {story.initials}
                     </div>
                     <div>
-                      <h4 className="font-bold text-[#1A1A1A] text-lg mb-2">{feature.title}</h4>
-                      <p className="text-gray-600 leading-relaxed">{feature.description}</p>
+                      <div className="font-bold text-gray-900">{story.name}</div>
+                      <div className="text-sm font-semibold text-gray-500">{story.role} • {story.location}</div>
                     </div>
-                  </motion.div>
-                ))}
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* Why Choose Xash with Image */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-5xl font-black text-[#1A1A1A] mb-4">
-              Why Choose Xash?
-            </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Built specifically for the Zimbabwean market
-            </p>
-          </motion.div>
-
-          <div className="grid lg:grid-cols-2 gap-16 items-center mb-12">
-            {/* Content */}
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="grid md:grid-cols-2 gap-6"
-            >
-              {WHY_CHOOSE_XASH.map((item, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 }}
-                  whileHover={{ y: -10 }}
-                  className="bg-[#F5F7FA] rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all border border-gray-100 group"
-                >
-                  <div 
-                    style={{ backgroundColor: item.color }}
-                    className="w-14 h-14 rounded-xl flex items-center justify-center mb-4 shadow-lg group-hover:scale-110 transition-transform"
-                  >
-                    <item.icon className="text-white" size={28} />
                   </div>
-                  <h3 className="text-lg font-bold mb-2 text-[#1A1A1A]">{item.title}</h3>
-                  <p className="text-gray-600 text-sm leading-relaxed">{item.description}</p>
-                </motion.div>
+                </Card>
               ))}
-            </motion.div>
-
-            {/* Image */}
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="relative"
-            >
-              <div className="rounded-3xl overflow-hidden shadow-2xl">
-                <ImageWithSkeleton
-                  src={shopOwnerImage}
-                  alt="Shop owner with POS device"
-                  className="w-full h-[600px] object-cover"
-                />
-              </div>
-              
-              {/* Overlay Badge */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.4 }}
-                className="absolute -bottom-8 left-8 right-8 bg-gradient-to-r from-[#1F6AE1] to-[#0B3C5D] rounded-2xl p-6 shadow-2xl"
-              >
-                <div className="flex items-center justify-between text-white">
-                  <div>
-                    <div className="text-sm font-medium mb-1">System Uptime</div>
-                    <div className="text-3xl font-black">99.9%</div>
-                  </div>
-                  <Award size={48} className="opacity-50" />
-                </div>
-              </motion.div>
-            </motion.div>
-          </div>
-        </div>
+           </div>
+         </div>
       </section>
 
-      {/* Partners */}
-      <section className="py-24 bg-[#F5F7FA]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-5xl font-black text-[#1A1A1A] mb-4">
-              Trusted Partners
-            </h2>
-            <p className="text-xl text-gray-600">
-              Working with leading network operators and utility providers
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
-            {PARTNERS.map((partner, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                whileHover={{ y: -5 }}
-                className="bg-white rounded-xl p-6 border border-gray-200 hover:border-[#1F6AE1] transition-all text-center shadow-md hover:shadow-xl"
-              >
-                <div className="w-16 h-16 bg-[#F5F7FA] rounded-lg mx-auto mb-3 flex items-center justify-center">
-                  <Building className="text-[#1F6AE1]" size={28} />
-                </div>
-                <h4 className="font-bold text-[#1A1A1A] text-sm mb-1">{partner.name}</h4>
-                <p className="text-gray-500 text-xs">{partner.type}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section className="py-32 relative overflow-hidden" style={{ backgroundColor: '#0B3C5D' }}>
-        <div className="absolute inset-0 opacity-20">
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#1F6AE1] rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[#F5B700] rounded-full blur-3xl animate-pulse"></div>
-        </div>
-        
-        <div className="max-w-5xl mx-auto px-4 text-center relative z-10">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            className="inline-flex items-center justify-center w-28 h-28 bg-white/20 backdrop-blur-sm rounded-3xl mb-10"
-          >
-            <Star className="text-white" size={48} />
-          </motion.div>
-          
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-5xl sm:text-6xl lg:text-7xl font-black mb-8 text-white leading-tight"
-          >
-            Ready to Grow Your Business?
-          </motion.h2>
-          
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="text-2xl text-white/90 mb-12 leading-relaxed max-w-3xl mx-auto"
-          >
-            Join hundreds of retailers across Zimbabwe earning with Xash. Get your free POS device today.
-          </motion.p>
-          
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-            className="flex flex-col sm:flex-row gap-6 justify-center mb-10"
-          >
-            <motion.button
-              whileHover={{ scale: 1.05, boxShadow: "0 25px 50px rgba(255, 255, 255, 0.3)" }}
-              whileTap={{ scale: 0.95 }}
-              className="bg-white text-[#0B3C5D] px-12 py-6 rounded-2xl font-black text-xl transition-all inline-flex items-center justify-center shadow-2xl group"
-            >
-              Apply for Free POS
-              <ArrowRight className="ml-3 group-hover:translate-x-2 transition-transform" size={28} />
-            </motion.button>
-            
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="bg-transparent border-3 border-white text-white px-12 py-6 rounded-2xl font-black text-xl transition-all hover:bg-white/10"
-            >
-              Request a Demo
-            </motion.button>
-          </motion.div>
-
-          <div className="flex flex-wrap items-center justify-center gap-8 text-white/80">
-            {[
-              { icon: Building, label: 'Based in Mutare' },
-              { icon: Shield, label: 'Zimbabwe-Registered' },
-              { icon: Star, label: 'Fully Compliant' }
-            ].map((item, idx) => (
-              <div key={idx} className="flex items-center space-x-2">
-                <item.icon size={20} />
-                <span className="text-sm font-semibold">{item.label}</span>
-              </div>
-            ))}
-          </div>
+      {/* Become a Reseller Banner */}
+      <section className="py-24 px-4">
+        <div className="max-w-5xl mx-auto bg-[#0B3C5D] rounded-[3rem] p-12 md:p-20 text-center text-white relative overflow-hidden shadow-2xl">
+           <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500 rounded-full filter blur-[100px] opacity-50 mix-blend-screen pointer-events-none"></div>
+           <div className="absolute bottom-0 left-0 w-64 h-64 bg-[#F5B700] rounded-full filter blur-[100px] opacity-20 mix-blend-screen pointer-events-none"></div>
+           
+           <h2 className="text-4xl md:text-5xl font-bold mb-6 relative z-10">Get upto 10% Commission</h2>
+           <p className="text-xl text-blue-100 mb-10 max-w-3xl mx-auto relative z-10">
+             Save money, save time with XashPay. Be number 1 in your community—start selling foreign countries' virtual services and earn upto 10% commission on every airtime and data sale you make.
+           </p>
+           
+           <Link to="/earn" className="relative z-10 block">
+             <Button className="bg-[#F5B700] text-[#0B3C5D] hover:bg-yellow-400 px-10 py-4 text-xl">
+               Become a Reseller Today
+             </Button>
+           </Link>
         </div>
       </section>
     </div>
   );
-};
-
-export default Home;
+}

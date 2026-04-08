@@ -1,153 +1,110 @@
 import { Link } from 'react-router-dom';
-import { MapPin, Mail, Phone, Building } from 'lucide-react';
-import { motion } from 'framer-motion';
-import { LEGAL_PAGES, COMPANY_INFO } from '../../../data/constants';
-import logo from "../../assets/logo.png"
+import { ArrowRight, MessageCircle, MapPin, Mail, Phone, ShieldCheck, CheckCircle } from 'lucide-react';
+import logo from '../../assets/logo.png';
 
-const Footer = () => {
-  const quickLinks = [
-    { path: '/', label: 'Home' },
-    { path: '/pos', label: 'Xash POS' },
-    { path: '/developers', label: 'Developers' },
-    { path: '/about', label: 'About' },
-    { path: '/contact', label: 'Contact' },
-  ];
-
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.5 },
-    },
-  };
-
+export default function Footer() {
   return (
-    <footer className="bg-[#0B3C5D] text-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12"
-        >
-          {/* Brand */}
-          <motion.div variants={itemVariants}>
-            <Link to="/" className="flex items-center">
-              <img 
-                src={logo} 
-                alt="Xash Logo"
-                className="w-20  rounded-lg"
-              />
+    <footer className="bg-[#0B3C5D] text-white pt-20 pb-10 border-t border-blue-900/50 mt-auto">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        {/* Top Feature Banner inside Footer */}
+        <div className="bg-white/5 rounded-3xl p-8 mb-16 flex flex-col md:flex-row items-center justify-between gap-6 border border-white/10">
+          <div className="flex-1">
+            <h3 className="text-2xl font-bold text-white mb-2">Ready to Go Global?</h3>
+            <p className="text-blue-200">Join thousands of agents and customers using XashPay for cross-border transactions.</p>
+          </div>
+          <div className="flex gap-4">
+            <a href="https://wa.me/27655971539?text=Hello" target="_blank" rel="noopener noreferrer">
+              <button className="bg-[#F5B700] text-[#0B3C5D] font-bold px-6 py-3 rounded-full hover:bg-yellow-400 transition-colors flex items-center gap-2 shadow-lg">
+                <MessageCircle size={20} /> Start on WhatsApp
+              </button>
+            </a>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+          {/* Brand Col */}
+          <div className="space-y-6">
+            <Link to="/" className="flex items-center gap-2 shrink-0">
+              <img src={logo} alt="XashPay" className="h-10 w-auto" />
             </Link>
-            <p className="text-gray-300 text-sm leading-relaxed mb-6">
-              {COMPANY_INFO.name}. Modern fintech solutions for retail across Zimbabwe. 
-              Secure, reliable, and commission-driven.
+            <p className="text-blue-200 text-sm leading-relaxed mt-2">
+              Global payments made simple. Buy or sell international airtime, data, electricity, and vouchers across multiple countries via WhatsApp.
             </p>
-            <div className="flex items-center text-sm text-gray-300">
-              <Building className="mr-2" size={16} />
-              <span>{COMPANY_INFO.registration}</span>
+            <div className="flex items-center gap-3 mt-6">
+              <span className="bg-white/10 px-3 py-1 rounded-full text-xs font-semibold border border-white/20 text-[#F5B700]">
+                12+ Countries
+              </span>
             </div>
-          </motion.div>
-
-          {/* Quick Links */}
-          <motion.div variants={itemVariants}>
-            <h3 className="text-lg font-bold mb-6 text-white">
-              Quick Links
-            </h3>
-            <ul className="space-y-3">
-              {quickLinks.map((link) => (
-                <li key={link.path}>
-                  <Link
-                    to={link.path}
-                    className="text-gray-300 hover:text-white transition-colors text-sm flex items-center group"
-                  >
-                    <span className="w-0 h-0.5 bg-[#F5B700] group-hover:w-4 transition-all duration-300 mr-0 group-hover:mr-2"></span>
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
+          </div>
+          
+          {/* Quick Links Col */}
+          <div>
+            <h4 className="text-lg font-bold mb-6 text-white uppercase tracking-wider">Quick Links</h4>
+            <ul className="space-y-3 font-medium">
+               <li><Link to="/" className="text-blue-200 hover:text-[#F5B700] transition-colors flex items-center gap-2"><ArrowRight size={14}/> Home</Link></li>
+               <li><Link to="/about" className="text-blue-200 hover:text-[#F5B700] transition-colors flex items-center gap-2"><ArrowRight size={14}/> About Us</Link></li>
+               <li><Link to="/services" className="text-blue-200 hover:text-[#F5B700] transition-colors flex items-center gap-2"><ArrowRight size={14}/> Services</Link></li>
+               <li><Link to="/earn" className="text-blue-200 hover:text-[#F5B700] transition-colors flex items-center gap-2"><ArrowRight size={14}/> Earn</Link></li>
+               <li><Link to="/contact" className="text-blue-200 hover:text-[#F5B700] transition-colors flex items-center gap-2"><ArrowRight size={14}/> Contact</Link></li>
             </ul>
-          </motion.div>
+          </div>
 
-          {/* Legal & Compliance */}
-          <motion.div variants={itemVariants}>
-            <h3 className="text-lg font-bold mb-6 text-white">
-              Legal & Compliance
-            </h3>
-            <ul className="space-y-3">
-              {LEGAL_PAGES.map((link) => (
-                <li key={link.path}>
-                  <Link
-                    to={link.path}
-                    className="text-gray-300 hover:text-white transition-colors text-sm flex items-center group"
-                  >
-                    <span className="w-0 h-0.5 bg-[#F5B700] group-hover:w-4 transition-all duration-300 mr-0 group-hover:mr-2"></span>
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </motion.div>
-
-          {/* Contact */}
-          <motion.div variants={itemVariants}>
-            <h3 className="text-lg font-bold mb-6 text-white">
-              Contact Us
-            </h3>
+          {/* Contact Info Col */}
+          <div>
+            <h4 className="text-lg font-bold mb-6 text-white uppercase tracking-wider">Contact Info</h4>
             <ul className="space-y-4">
-              <li className="flex items-start text-sm text-gray-300">
-                <MapPin className="mr-3 mt-0.5 flex-shrink-0 text-[#F5B700]" size={18} />
-                <span>{COMPANY_INFO.address}</span>
-              </li>
-              <li className="flex items-center text-sm">
-                <Mail className="mr-3 flex-shrink-0 text-[#F5B700]" size={18} />
-                <a href={`mailto:${COMPANY_INFO.email}`} className="text-gray-300 hover:text-white transition-colors">
-                  {COMPANY_INFO.email}
-                </a>
-              </li>
-              <li className="flex items-center text-sm">
-                <Mail className="mr-3 flex-shrink-0 text-[#F5B700]" size={18} />
-                <a href={`mailto:${COMPANY_INFO.supportEmail}`} className="text-gray-300 hover:text-white transition-colors">
-                  {COMPANY_INFO.supportEmail}
-                </a>
-              </li>
-              <li className="flex items-center text-sm">
-                <Phone className="mr-3 flex-shrink-0 text-[#F5B700]" size={18} />
-                <a href={`tel:${COMPANY_INFO.phone}`} className="text-gray-300 hover:text-white transition-colors">
-                  {COMPANY_INFO.phone}
-                </a>
-              </li>
+               <a href="https://wa.me/27655971539?text=Hello" target="_blank" rel="noopener noreferrer" className="flex items-start gap-3 text-blue-200 hover:text-white transition-colors cursor-pointer group">
+                  <Phone size={20} className="text-[#F5B700] mt-1 shrink-0 group-hover:scale-110 transition-transform" />
+                  <div>
+                    <div className="font-semibold text-white">+27 65 597 1539</div>
+                    <div className="text-sm">WhatsApp Support</div>
+                  </div>
+               </a>
+               <li className="flex items-start gap-3 text-blue-200">
+                  <Mail size={20} className="text-[#F5B700] mt-1 shrink-0" />
+                  <div>
+                    <div className="font-semibold text-white">info@xash.network</div>
+                    <div className="text-sm">General Inquiries</div>
+                  </div>
+               </li>
             </ul>
-          </motion.div>
-        </motion.div>
+          </div>
+          
+          {/* Trust Col */}
+          <div>
+            <h4 className="text-lg font-bold mb-6 text-white uppercase tracking-wider">Trust & Security</h4>
+            <div className="space-y-4">
+              <div className="flex items-center gap-3 bg-white/5 p-3 rounded-xl border border-white/10">
+                <ShieldCheck size={24} className="text-green-400" />
+                <div>
+                  <div className="font-semibold text-white text-sm">SSL Secured</div>
+                  <div className="text-xs text-blue-200">Verified & Secure</div>
+                </div>
+              </div>
+              <div className="flex items-center gap-3 bg-white/5 p-3 rounded-xl border border-white/10">
+                <CheckCircle size={24} className="text-[#F5B700]" />
+                <div>
+                  <div className="font-semibold text-white text-sm">24/7 Support</div>
+                  <div className="text-xs text-blue-200">Always Available</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
 
         {/* Bottom Bar */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.5 }}
-          className="border-t border-[#1F6AE1] pt-8 flex flex-col md:flex-row justify-between items-center text-sm"
-        >
-          <p className="text-gray-400 mb-4 md:mb-0">
-            &copy; {new Date().getFullYear()} {COMPANY_INFO.name}. All rights reserved.
-          </p>
-        </motion.div>
+        <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-blue-300">
+          <div>
+            &copy; {new Date().getFullYear()} Xash Solutions. All rights reserved.
+          </div>
+          <div className="flex gap-6">
+            <Link to="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link>
+            <Link to="/terms-of-service" className="hover:text-white transition-colors">Terms of Service</Link>
+          </div>
+        </div>
+
       </div>
     </footer>
   );
-};
-
-export default Footer;
+}
