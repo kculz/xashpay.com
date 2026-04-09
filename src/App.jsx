@@ -12,6 +12,7 @@ import Contact from './pages/Contact';
 // Import remaining legal pages just to not break existing references
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsOfService from './pages/TermsOfService';
+import NotFound from './pages/NotFound';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -44,7 +45,8 @@ function App() {
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/terms-of-service" element={<TermsOfService />} />
             
-            {/* Redirect legacy offline/agents routes to home or keep them unlinked */}
+            {/* Catch-all Not Found Route */}
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </main>
         
