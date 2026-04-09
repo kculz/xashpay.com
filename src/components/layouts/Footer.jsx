@@ -6,7 +6,7 @@ export default function Footer() {
   return (
     <footer className="bg-[#0B3C5D] text-white pt-20 pb-10 border-t border-blue-900/50 mt-auto">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
+
         {/* Top Feature Banner inside Footer */}
         <div className="bg-white/5 rounded-3xl p-8 mb-16 flex flex-col md:flex-row items-center justify-between gap-6 border border-white/10">
           <div className="flex-1">
@@ -37,16 +37,16 @@ export default function Footer() {
               </span>
             </div>
           </div>
-          
+
           {/* Quick Links Col */}
           <div>
             <h4 className="text-lg font-bold mb-6 text-white uppercase tracking-wider">Quick Links</h4>
             <ul className="space-y-3 font-medium">
-               <li><Link to="/" className="text-blue-200 hover:text-[#F5B700] transition-colors flex items-center gap-2"><ArrowRight size={14}/> Home</Link></li>
-               <li><Link to="/about" className="text-blue-200 hover:text-[#F5B700] transition-colors flex items-center gap-2"><ArrowRight size={14}/> About Us</Link></li>
-               <li><Link to="/services" className="text-blue-200 hover:text-[#F5B700] transition-colors flex items-center gap-2"><ArrowRight size={14}/> Services</Link></li>
-               <li><Link to="/earn" className="text-blue-200 hover:text-[#F5B700] transition-colors flex items-center gap-2"><ArrowRight size={14}/> Earn</Link></li>
-               <li><Link to="/contact" className="text-blue-200 hover:text-[#F5B700] transition-colors flex items-center gap-2"><ArrowRight size={14}/> Contact</Link></li>
+              <li><Link to="/" className="text-blue-200 hover:text-[#F5B700] transition-colors flex items-center gap-2"><ArrowRight size={14} /> Home</Link></li>
+              <li><Link to="/about" className="text-blue-200 hover:text-[#F5B700] transition-colors flex items-center gap-2"><ArrowRight size={14} /> About Us</Link></li>
+              <li><Link to="/services" className="text-blue-200 hover:text-[#F5B700] transition-colors flex items-center gap-2"><ArrowRight size={14} /> Services</Link></li>
+              <li><Link to="/earn" className="text-blue-200 hover:text-[#F5B700] transition-colors flex items-center gap-2"><ArrowRight size={14} /> Earn</Link></li>
+              <li><Link to="/contact" className="text-blue-200 hover:text-[#F5B700] transition-colors flex items-center gap-2"><ArrowRight size={14} /> Contact</Link></li>
             </ul>
           </div>
 
@@ -54,23 +54,23 @@ export default function Footer() {
           <div>
             <h4 className="text-lg font-bold mb-6 text-white uppercase tracking-wider">Contact Info</h4>
             <ul className="space-y-4">
-               <a href="https://wa.me/27655971539?text=Hello" target="_blank" rel="noopener noreferrer" className="flex items-start gap-3 text-blue-200 hover:text-white transition-colors cursor-pointer group">
-                  <Phone size={20} className="text-[#F5B700] mt-1 shrink-0 group-hover:scale-110 transition-transform" />
-                  <div>
-                    <div className="font-semibold text-white">+27 65 597 1539</div>
-                    <div className="text-sm">WhatsApp Support</div>
-                  </div>
-               </a>
-               <li className="flex items-start gap-3 text-blue-200">
-                  <Mail size={20} className="text-[#F5B700] mt-1 shrink-0" />
-                  <div>
-                    <div className="font-semibold text-white">info@xash.network</div>
-                    <div className="text-sm">General Inquiries</div>
-                  </div>
-               </li>
+              <a href="https://wa.me/263779325039?text=Hello" target="_blank" rel="noopener noreferrer" className="flex items-start gap-3 text-blue-200 hover:text-white transition-colors cursor-pointer group">
+                <Phone size={20} className="text-[#F5B700] mt-1 shrink-0 group-hover:scale-110 transition-transform" />
+                <div>
+                  <div className="font-semibold text-white">+263 77 932 5039</div>
+                  <div className="text-sm">WhatsApp Support</div>
+                </div>
+              </a>
+              <li className="flex items-start gap-3 text-blue-200">
+                <Mail size={20} className="text-[#F5B700] mt-1 shrink-0" />
+                <div>
+                  <div className="font-semibold text-white">info@xash.network</div>
+                  <div className="text-sm">General Inquiries</div>
+                </div>
+              </li>
             </ul>
           </div>
-          
+
           {/* Trust Col */}
           <div>
             <h4 className="text-lg font-bold mb-6 text-white uppercase tracking-wider">Trust & Security</h4>
